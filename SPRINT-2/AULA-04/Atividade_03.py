@@ -2,10 +2,13 @@ import pandas as pd
 from sklearn.tree import DecisionTreeClassifier, export_text
 from sklearn.model_selection import train_test_split
 
+df = pd.read_csv("chatbot_data.csv")
+
+
 # 1. Preparação (Usando as features da Aula 02)
 # Supondo que o df já tenha as colunas: 'qtd_exclamacao', 'tem_palavra_alerta', 'tamanho_msg'
-X = df[['qtd_exclamacao', 'tem_palavra_alerta', 'tamanho_msg']]
-y = df['rotulo'] # 1: Alta Prioridade, 0: Comum
+X = df[['contem_exclamacao', 'palavras_negativas', 'comprimento_msg']]
+y = df['label'] # 1: Alta Prioridade, 0: Comum
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
