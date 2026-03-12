@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 # 1. CARREGAMENTO DOS DADOS
-df = #complete manualmente este trecho do código
+df = pd.read_csv("suporte_ecommerce.csv") #complete manualmente este trecho do código
 
 # 2. SELEÇÃO DAS VARIÁVEIS
 y_true = df['tempo_real']     # O que aconteceu de verdade na fila

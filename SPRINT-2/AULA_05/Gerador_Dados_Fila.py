@@ -21,7 +21,7 @@ def gerar_dados_suporte(n=1000):
     # Injetando Outliers Críticos (O "Cenário de Desastre")
     # Em 2% dos casos (20 linhas), o sistema trava e o tempo real explode, mas o modelo não percebe
     indices_falha = np.random.choice(n, 20, replace=False)
-    tempo_real[indices_erro] += 400  # Adiciona quase 7 minutos de erro real
+    tempo_real[indices_falha] += 400  # Adiciona quase 7 minutos de erro real
     
     # Criando coluna de Satisfação (CSAT) para os exercícios de estatística
     # 1 a 10, onde o tempo de espera influencia o humor do cliente
